@@ -14,3 +14,247 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  margin: 0 auto; /*aqui nao vi mudar nada*/
+  padding: 0; /*aqui nao vi mudar nada*/
+  /*aqui buga tudo se mudar*/
+  display: flex; /*aqui buga tudo se mudar ela encosta no canto de cima*/
+  justify-content: center; /*aqui já sabe*/
+  align-items: center;
+  height: 660px;
+  width: 1360px;
+  position: relative;
+  background-color: #e4e7eb;
+}
+
+.line {
+  font-family: Tahoma, lucida grande, Verdana, Arial, sans-serif;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 0px;
+}
+
+#contorno {
+  border-top: 50px solid #5a6b6c;
+  border-bottom: 20px solid rgb(90, 107, 108);
+  border-bottom-width: 10px;
+  border-top-width: 10px;
+  box-shadow: 0 0 1px 1px black;
+
+  
+}
+
+#contorn {
+  border-top: 2px solid #5a6b6c;
+  border-bottom: 2px solid rgb(90, 107, 108);
+  border-bottom-width: 10px;
+  border-top-width: 10px;
+  box-shadow: 0 0 1px 1px black;
+}
+
+.slider {
+  width: 328px; /*torna gigante div*/
+  margin-top: 355px; /*movimenta pra cima ou baixo  AQUI 550 TA PFT*/
+  margin-right: 707px; /*PERFEITO AQUI CONTRA O LOCAL LEFTH RIGHT*/
+  height: 205px; /*aqui desloca o local onde toda div esta vai pra cima ou baixo torna gigante div*/
+  border-radius: 2px; /*aqui torna redondo a div deixa de ser quadrada*/
+  overflow: hidden; /*aqui já sabe*/
+  position: absolute;
+}
+
+.centro {
+  width: 280px;
+  height: 205px;
+  margin-top: 355px; /*aqui movimentam div pra cima e pra baixo junto com as bordas*/
+  margin-left: -97px;
+  text-align: center;
+  background-color: hsla(0, 0%, 86%, 0.842);
+  border-radius: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  position: absolute;
+}
+
+.slides {
+  width: 500%; /*aqui não mexe torna espaçoso*/
+  height: 500px; /*aqui não mexe torna espaçoso*/
+  display: flex; /*aqui não mexe se mexer so mostra primeira imagem*/
+}
+
+.slides input {
+  display: none; /*aqui não mexe torna o input estr*/
+}
+
+.slide {
+  width: 20%; /*aqui não mexe torna espaçoso*/
+  transition: 2s; /*aqui não mexe torna veloz*/
+}
+
+.slide img {
+  width: 328px; /*aqui não mexe atrapalha na transição*/
+  height: 210px; /*aqui muda o tamanho da imagem dentro da div*/
+  /*aqui não mexe*/
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual {
+  position: absolute; /*slider botoes mudou com fixed so esse*/
+  width: 800px; /*buga botoes eles saem um de dentro do other*/
+  margin-top: -335px; /*buga botoes eles saem um de dentro do other*/
+  display: flex; /*buga botoes eles saem um de dentro do other*/
+  justify-content: center; /*aqui precisa sem centralizado pra manter*/
+  margin-left: -110px;
+}
+
+.manual-btn {
+  border: 2px solid #40d3dc; /*cor de fora do botton*/
+  padding: 5px; /*buga botoes eles saem um de dentro do other*/
+  border-radius: 20px; /*tamanho botton*/
+  cursor: pointer; /*mudou nada*/
+  transition: 4s; /*demora*/
+}
+
+/*css for manual slide navigation*/
+
+.manual-btn:not(:last-child) {
+  margin-right: 1px;
+  /*desalinha os botoes*/
+}
+
+.manual-btn:hover {
+  background: #40d3dc;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+  /*mudou nada*/
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+  /*mudou nada*/
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+  /*mudou nada*/
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto {
+  position: absolute; /*botoes fixos dentro deles*/
+  display: flex; /*buga sem*/
+  width: 800px; /*buga botoes eles se separam*/
+  justify-content: center; /*os botoes que sem  movimentam so eles se separam usando outro*/
+  /*os botoes que sem  movimentam so eles se separam usando outro vao pra cima*/
+  margin-top: 165px;
+  margin-left: -110px;
+}
+
+.navigation-auto div {
+  border: 2px solid #40d3dc; /*sem problemas mais é contorno*/
+  padding: 5px; /*espacamento dos botoes buga*/
+  border-radius: 10px; /*legal e meu diferencial 1px*/
+  transition: 4s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 1px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: #40d3dc;
+  /*cor de dentro*/
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: #40d3dc;
+} /*cor de dentro*/
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: #40d3dc;
+  /*cor de dentro*/
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: #40d3dc;
+  /*cor de dentro*/
+}
+
+/*COMEÇO DA PAGINA 2 ASSINATURA*/
+
+.subsoul {
+  margin: 0 auto; /*aqui nao vi mudar nada*/
+  padding: 0; /*aqui nao vi mudar nada*/
+  /*aqui buga tudo se mudar*/
+  display: flex; /*aqui buga tudo se mudar ela encosta no canto de cima*/
+  justify-content: center; /*aqui já sabe*/
+  align-items: center;
+  height: 1660px;
+  width: 1360px;
+  position: relative;
+  background-color: #e4e7eb;
+}
+
+.pricefreebtn1 {
+  background-color: #00abefe5;
+  height: 60px;
+  line-height: 60px;
+  padding: -20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffff;
+  margin-top: 10px;
+  width: 200px;
+  margin-left: 40px;
+  border-radius: 700px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif Helvetica, sans-serif;
+}
+
+/*PAGINAS DE EXEMPLO*/
+
+.subsoul1 {
+  background-image: url("/images/pag.png");
+  margin: 0 auto; 
+  padding: 0; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  height: 1660px;
+  width: 1360px;
+  background-color: #e4e7eb;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  }
+
+  .subsoul2 {
+    background-image: url("/images/cad.png");
+    margin: 0 auto; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 1660px;
+    width: 1360px;
+    background-color: #e4e7eb;
+    background-repeat: no-repeat;
+    position: relative;
+    }
+
+    /*AQUI ABAIXO INICIA A PÁGINA DE PAGAMENTO*/
+
+   
+
+   
+
+   
