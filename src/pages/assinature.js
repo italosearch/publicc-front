@@ -1,11 +1,11 @@
-import Image from "next/image";
-import React, { useEffect, useState, Text } from "react";
-import { AppBar, Toolbar, Button } from "@material-ui/core";
+import Image from 'next/image';
+import React, { useEffect, useState, Text } from 'react';
+// import { AppBar, Toolbar, Button } from "@material-ui/core";
 
-function Pagamento() {
+function Assinature() {
   return (
-    <div className="subsoul1">
-      <AppBar position="absolute" color="default" elevation="0">
+    <div className="subsoul">
+      {/* <AppBar position="absolute" color="default" elevation="0">
         <Toolbar style={{ justifyContent: "flex-end", color: "#000000" }}>
           <Button
             variant="outlined"
@@ -28,9 +28,13 @@ function Pagamento() {
             CADASTRAR
           </Button>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
+
+      <div className="pricefreebtn1">ASSINE AGORA</div>
+      <div className="pricefreebtn1">ASSINE AGORA</div>
+      <div className="pricefreebtn1">ASSINE AGORA</div>
     </div>
   );
 }
 
-export default Pagamento;
+export default Assinature;
