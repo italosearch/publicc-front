@@ -1,20 +1,3 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .container {
   margin: 0 auto; /*aqui nao vi mudar nada*/
   padding: 0; /*aqui nao vi mudar nada*/
@@ -42,8 +25,6 @@ a {
   border-bottom-width: 10px;
   border-top-width: 10px;
   box-shadow: 0 0 1px 1px black;
-
-  
 }
 
 #contorn {
@@ -224,37 +205,31 @@ a {
 /*PAGINAS DE EXEMPLO*/
 
 .subsoul1 {
-  background-image: url("/images/pag.png");
-  margin: 0 auto; 
-  padding: 0; 
-  display: flex; 
-  justify-content: center; 
+  background-image: url('/images/pag.png');
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
   align-items: center;
   height: 1660px;
   width: 1360px;
   background-color: #e4e7eb;
   background-repeat: no-repeat;
   margin-top: 100px;
-  }
+}
 
-  .subsoul2 {
-    background-image: url("/images/cad.png");
-    margin: 0 auto; 
-    padding: 0; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    height: 1660px;
-    width: 1360px;
-    background-color: #e4e7eb;
-    background-repeat: no-repeat;
-    position: relative;
-    }
+.subsoul2 {
+  background-image: url('/images/cad.png');
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1660px;
+  width: 1360px;
+  background-color: #e4e7eb;
+  background-repeat: no-repeat;
+  position: relative;
+}
 
-    /*AQUI ABAIXO INICIA A PÁGINA DE PAGAMENTO*/
-
-   
-
-   
-
-   
+/*AQUI ABAIXO INICIA A PÁGINA DE PAGAMENTO*/

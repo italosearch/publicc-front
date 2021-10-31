@@ -1,0 +1,39 @@
+.registerDataContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registerDataForm {
+  border: 1px solid #000;
+}
+.formTitle {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.formTitle h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.registerDataForm fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.registerDataForm fieldset div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.registerDataForm input {
+  padding: 0.7rem;
+  width: 20rem;
+  border: 1px solid #f0f0f0;
+}
+.registerDataForm label {
+  font-size: 1.6ch;
+  font-weight: 600;
+}

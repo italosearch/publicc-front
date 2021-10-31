@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React, { useEffect, useState, Text } from "react";
-import { AppBar, Toolbar, Button } from "@material-ui/core";
+// import { AppBar, Toolbar, Button } from "@material-ui/core";
 
 function Cadastro() {
   return (
     <div className="subsoul2">
-      <AppBar position="absolute" color="default" elevation="0">
+      {/* <AppBar position="absolute" color="default" elevation="0">
         <Toolbar style={{ justifyContent: "flex-end", color: "#000000" }}>
           <Button
             variant="outlined"
@@ -28,7 +28,7 @@ function Cadastro() {
             CADASTRAR
           </Button>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
     </div>
   );
 }
