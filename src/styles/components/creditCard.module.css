@@ -23,10 +23,15 @@
   height: 3rem;
   width: 10rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
-.creditCardHeader button:focus {
+
+/* .creditCardHeader button:focus {
   border-bottom: 3px solid orange;
-}
+} */
 .formContent {
   padding: 2rem 2rem;
   display: flex;
@@ -55,13 +60,22 @@
 .dateCVV {
   display: flex;
   align-self: center;
+  width: 100%;
 }
 .dateCVV input {
+  width: 80%;
+  position: relative;
+}
+.dateCVV input:last-child {
   width: 90%;
  
 }
 .dateCVV input::-webkit-calendar-picker-indicator {
   display: none;
+}
+.dateCVV div span {
+ top: 0.4rem;
+ left: 1rem;
 }
 .priceCard {
   width: 10rem;
@@ -72,7 +86,6 @@
   justify-content: center;
   background-color: #f8f8f8;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
 }
 .termsBox {
   display: flex;
@@ -97,4 +110,7 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+.active {
+  border-bottom: 3px solid orange;
 }
