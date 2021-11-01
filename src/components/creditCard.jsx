@@ -1,16 +1,46 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import CreditCardIcon from '../assets/credit-card-svgrepo-com.svg';
+import BarcodeIcon from '../assets/barcode-svgrepo-com.svg';
+import CVVIcon from '../assets/card-cvv.svg';
+import Image from 'next/image';
 import styles from '../styles/components/creditCard.module.css';
 export function CreditCard() {
- function handleSubmit(e) {
-   e.preventDefault();
- }
+  const [isCreditCardSelected, setIsCreditCardSelected] = useState(true);
+  const [isTicketSelected, setSelectTicket] = useState(false);
+  function selectButton() {
+    !isCreditCardSelected
+      ? setIsCreditCardSelected(true)
+      : setIsCreditCardSelected(false);
+    !isTicketSelected ? setSelectTicket(true) : setSelectTicket(false);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
   return (
     <div className={styles.creditCardContainer}>
       <form onSubmit={handleSubmit} className={styles.creditCardForm}>
         <div className={styles.creditCardHeader}>
-          <button>Cartão de crédito</button>
-          <button>Boleto</button>
+          <button
+            onClick={selectButton}
+            className={isCreditCardSelected ? styles.active : ''}
+          >
+            Cartão de crédito
+            {/* <CreditCardIcon /> */}
+            <Image
+              src={CreditCardIcon}
+              alt="creditcard"
+              width={20}
+              height={20}
+            />
+          </button>
+
+          <button
+            onClick={selectButton}
+            className={isTicketSelected ? styles.active : ''}
+          >
+            Boleto
+            <Image src={BarcodeIcon} alt="barcode" width={20} height={20} />
+          </button>
         </div>
         <section className={styles.formContent}>
           <fieldset>
@@ -29,6 +59,7 @@ export function CreditCard() {
             <div>
               <label htmlFor="">CÓDIGO DE SEGURANÇA (CVV) *</label>
               <input type="number" name="" placeholder="000" />
+              <Image src={CVVIcon} alt="cvv" width={25} height={25} />
             </div>
           </div>
           <div className={styles.priceCard}>
