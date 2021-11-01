@@ -5,7 +5,7 @@
   justify-content: center;
 }
 .registerDataForm {
-  border: 1px solid #000;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .formTitle {
   background-color: #f0f0f0;
@@ -31,7 +31,8 @@
 .registerDataForm input {
   padding: 0.7rem;
   width: 20rem;
-  border: 1px solid #f0f0f0;
+  border: 2px solid #e2e2e2;
+  border-radius: 4px;
 }
 .registerDataForm label {
   font-size: 1.6ch;
