@@ -1,9 +1,13 @@
 import React from 'react';
+
 import styles from '../styles/components/creditCard.module.css';
 export function CreditCard() {
+ function handleSubmit(e) {
+   e.preventDefault();
+ }
   return (
     <div className={styles.creditCardContainer}>
-      <form className={styles.creditCardForm}>
+      <form onSubmit={handleSubmit} className={styles.creditCardForm}>
         <div className={styles.creditCardHeader}>
           <button>Cartão de crédito</button>
           <button>Boleto</button>
@@ -20,19 +24,25 @@ export function CreditCard() {
           <div className={styles.dateCVV}>
             <div>
               <label htmlFor="">MÊS E ANO DO VENCIMENTO *</label>
-              <input type="date" name="" placeholder="MM/AA" />
+              <input type="text" name="" placeholder="MM/AA" />
             </div>
             <div>
               <label htmlFor="">CÓDIGO DE SEGURANÇA (CVV) *</label>
               <input type="number" name="" placeholder="000" />
             </div>
           </div>
-          <div>
+          <div className={styles.priceCard}>
             <h1>R$ 99,90</h1>
             <span>BRL</span>
           </div>
-          <div></div>
-          <button></button>
+          <div className={styles.termsBox}>
+            <button></button>
+            <span>
+              <strong>Importante:</strong> Estou de acordo com os{' '}
+              <a>termos de adesão</a>
+            </span>
+          </div>
+          <button>Realizar Pagamento</button>
         </section>
       </form>
     </div>
