@@ -4,7 +4,7 @@ import { CreditCard } from '../components/creditCard';
 import { RegisterData } from '../components/registerdata';
 import styles from '../styles/pages/landingPage.module.css';
 
-export function LandingPage() {
+function LandingPage() {
   return (
     <section className={styles.landingPageContainer}>
       <RegisterData />
@@ -13,3 +13,5 @@ export function LandingPage() {
     </section>
   );
 }
+
+export default LandingPage;
