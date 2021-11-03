@@ -1,11 +1,14 @@
 .buyingCardContainer {
-  flex: 1;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -30px;
+  height: 600px;
+  width: 300px;
 }
 .buyingCard {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 2px 2px, rgba(0, 0, 0, 0.23) 0px 2px 4px;
   width: 75%;
   height: 60%;
   display: flex;
@@ -15,7 +18,7 @@
   gap: 1rem;
 }
 .buyingCard h1 {
-  font-size: 1.8ch;
+  font-size: 1.3ch;
 }
 .buyingCard div {
   display: flex;
@@ -23,30 +26,14 @@
   align-items: center;
 }
 .description {
-  width: 50%;
+  width: 60%;
   height: 60%;
+  margin-top: 20px;
   background-color: #f0f0f0da;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.price {
-  width: 50%;
-  height: 50%;
-  background-color: #f0f0f0;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  padding: 0.5rem;
-}
-.price h1 {
-  width: 100%;
-  height: 2rem;
-  font-size: 2ch;
-  font-weight: 400;
-  text-align: center;
-  background-color: white;
-}
-.price div {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
 
-  gap: 1rem;
+
+.price{
+  color: rgb(231, 231, 10);
 }

@@ -7,14 +7,14 @@ export function BuyingCard() {
       <div className={styles.buyingCard}>
         <h1>Você está comprando o plano básico</h1>
         <div className={styles.description}>
-          <h2>hf hf</h2>
-          <span> hf hf</span>
+          <h2> -</h2>
+          <span>-</span>
         </div>
         <div className={styles.price}>
-          <h1>Básico</h1>
+         
           <div>
-            <h2>R$99,90</h2>
-            <span>BRL</span>
+            <h2>R$70,99</h2>
+           
           </div>
         </div>
       </div>

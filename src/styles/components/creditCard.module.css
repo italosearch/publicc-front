@@ -1,9 +1,8 @@
 .creditCardContainer {
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+ 
   flex: 1.6;
   display: flex;
-
+  margin-top: 35px;
   justify-content: center;
 }
 .creditCardForm {
@@ -12,7 +11,11 @@
   width: 90%;
   height: 82%;
   margin-top: 3rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-top: 50px solid rgba(149, 158, 158, 0.582);
+  border-bottom: 20px solid rgba(149, 158, 158, 0.527);
+  border-bottom-width: 10px;
+  border-top-width: 10px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.199);
 }
 .creditCardHeader {
   display: flex;
@@ -57,6 +60,29 @@
   background-color: #f0f0f0;
   border-radius: 4px;
 }
+
+.dateCPF {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+.dateCPF input {
+  width: 50%;
+  position: relative;
+  margin-top: 20px;
+  margin-left: -25px;
+}
+.dateCPF input:last-child {
+  width: 40%;
+}
+.dateCPF input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.dateCPF div span {
+  top: 0.4rem;
+  left: 1rem;
+}
+
 .dateCVV {
   display: flex;
   align-self: center;
@@ -68,29 +94,260 @@
 }
 .dateCVV input:last-child {
   width: 90%;
- 
 }
 .dateCVV input::-webkit-calendar-picker-indicator {
   display: none;
 }
 .dateCVV div span {
- top: 0.4rem;
- left: 1rem;
+  top: 0.4rem;
+  left: 1rem;
 }
+
+.dateNumber {
+  display: flex;
+  align-self: center;
+  margin-left: 200px;
+  margin-top: -73px;
+}
+
+.dateNumber input {
+  width: 50%;
+  position: relative;
+  margin-top: 20px;
+  margin-left: -25px;
+}
+.dateNumberinput {
+  width: 50%;
+  position: relative;
+}
+
+.dateNumber input:last-child {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: -110px;
+}
+.dateNumberinput::-webkit-calendar-picker-indicator {
+  display: none;
+  margin-top: 20px;
+}
+.dateNumber div span {
+  top: 0.4rem;
+  left: 1rem;
+}
+
+
+
+.dateADRESS {
+  width: 600px;
+  display: flex;
+  margin-left: -130px;
+  padding-left: 125px;
+}
+
+.dateADRESS input {
+  width: 50%;
+  position: relative;
+  margin-top: 20px;
+  margin-left: -65px;
+ 
+}
+
+.dateADRESSinput:last-child {
+  width: 100%;
+}
+.dateADRESSinput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.dateADRESS div span {
+  top: 0.4rem;
+  left: 1rem;
+  
+}
+
+
+
+
+.numberhome {
+  display: flex;
+  width: 25%;
+  position: relative;
+  margin-left: 340px;
+  margin-top: -73px;
+}
+
+
+.numberhome input:last-child {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: -50px;
+ 
+}
+.numberhomeinput::-webkit-calendar-picker-indicator {
+  display: none;
+  margin-top: 20px;
+  
+}
+.numberhome div span {
+  top: 0.4rem;
+  left: 1rem;
+
+}
+
+
+
+.dateComplement{
+  width: 600px;
+  display: flex;
+  margin-left: -130px;
+  padding-left: 125px;
+}
+
+.dateComplement input {
+  width: 40%;
+  position: relative;
+  margin-top: 20px;
+  margin-left: -90px;
+ 
+}
+
+.dateComplementinput:last-child {
+  width: 100%;
+}
+.dateComplementinput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.dateComplement div span {
+  top: 0.4rem;
+  left: 1rem;
+  
+}
+
+
+
+.dateBairro{
+  display: flex;
+  width: 25%;
+  position: relative;
+  margin-left: 65px;
+  margin-top: -73px;
+}
+
+
+.dateBairro input:last-child {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: -50px;
+ 
+}
+.dateBairroinput::-webkit-calendar-picker-indicator {
+  display: none;
+  margin-top: 20px;
+  
+}
+.dateBairro div span {
+  top: 0.4rem;
+  left: 1rem;
+}
+
+
+
+.numberCEP {
+  display: flex;
+  width: 25%;
+  position: relative;
+  margin-left: 350px;
+  margin-top: -73px;
+}
+
+
+.numberCEP input:last-child {
+  
+  margin-top: 20px;
+  margin-left: -30px;
+ 
+}
+.numberCEPinput::-webkit-calendar-picker-indicator {
+  display: none;
+  margin-top: 20px;
+  
+}
+.numberCEP div span {
+  top: 0.4rem;
+  left: 1rem;
+
+}
+
+
+.dateCITY {
+  width: 600px;
+  display: flex;
+  margin-left: -130px;
+  padding-left: 125px;
+}
+
+.dateCITY input {
+  width: 50%;
+  position: relative;
+  margin-top: 20px;
+  margin-left: -50px;
+ 
+}
+
+.dateCITYinput:last-child {
+  width: 100%;
+}
+.dateCITYinput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.dateCITY div span {
+  top: 0.4rem;
+  left: 1rem;
+  
+}
+
+
+
+
+.numberUF {
+  display: flex;
+  width: 25%;
+  position: relative;
+  margin-left: 350px;
+  margin-top: -73px;
+}
+
+
+.numberUF input:last-child {
+  
+  margin-top: 20px;
+  margin-left: -50px;
+ 
+}
+.numberUFinput::-webkit-calendar-picker-indicator {
+  display: none;
+  margin-top: 20px;
+  
+}
+.numberUF div span {
+  top: 0.4rem;
+  left: 1rem;
+
+}
+
 .priceCard {
-  width: 10rem;
-  height: 5rem;
+  width: 9rem;
+  height: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f8f8f8;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: rgb(231, 231, 10);
+ 
 }
 .termsBox {
   display: flex;
   width: 100%;
-  height: 3rem;
+  height: 1rem;
   align-items: center;
   background-color: #ffe6e9;
 }
