@@ -1,6 +1,6 @@
-import Head from "next/head";
-import { LandingPage } from "./landingPage";
-import { AppBar, Toolbar, Button } from "@material-ui/core";
+import Head from 'next/head';
+import { LandingPage } from './landingPage';
+
 export default function Home() {
   // const [count, setCounter] = useState(1);
 
@@ -23,64 +23,9 @@ export default function Home() {
         <meta name="projeto-front" content="front" />
       </Head>
 
-      <div className= "subsoul2">
-      <AppBar
-        position="absolute"
-        color="default"
-        elevation="1"
-        style={{ justifyContent: "flex-end", height: 40, padding: -10 }}
-      >
-        <Toolbar style={{ justifyContent: "flex-end", color: "#000000" }}>
-          <Button
-            variant="dense"
-            color="inherit"
-            style={{
-              justifyContent: "flex-end",
-              color: "#000000",
-              marginTop: 20,
-              fontSize: 10,
-              fontFamily:" Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;"
-            }}
-          >
-            ENTRAR
-          </Button>
-
-          <Button
-            variant="dense"
-            color="inherit"
-            boxShadow="transparent"
-            style={{
-              justifyContent: "flex-end",
-              color: "#000000",
-              marginTop: 20,
-              fontSize: 10,
-              fontFamily:" Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;"
-            }}
-          >
-            CADASTRAR
-          </Button>
-
-          <Button
-            variant="dense"
-            color="inherit"
-            boxShadow="transparent"
-            style={{
-              justifyContent: "flex-end",
-              color: "#000000",
-              marginTop: 20,
-              fontSize: 10,
-              fontFamily:" Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;"
-            }}
-          >
-            VOLTAR PARA OS PLANOS
-          </Button>
-        </Toolbar>
-      </AppBar>
-
       <main>
         <LandingPage />
       </main>
-      </div>
     </>
   );
 }
