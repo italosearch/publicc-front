@@ -75,7 +75,7 @@ function Cards() {
                   className={styles.dropzone}
                 >
                   <div>
-                    {isD && (
+                    {isDragging && (
                       <h1 className={styles.blur}>
                         PRIMEIRA AÇÃO DE CHAMAR .FICA EM MODO BLUR ASSIM QUE
                         SOLTAR
