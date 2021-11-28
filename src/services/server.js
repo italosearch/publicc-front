@@ -15,8 +15,8 @@ export const storage = getStorage(firebaseImpl)
 export const auth = getAuth(firebaseImpl)
 
 // Point to the RTDB emulator running on localhost.
-if (process.env.NODE_ENV === 'development') {
-  connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true })
-  connectDatabaseEmulator(database, 'localhost', 9000)
-  connectStorageEmulator(storage, 'localhost', 9199)
-}
+// if (process.env.NODE_ENV === 'development') {
+//   connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true })
+//   connectDatabaseEmulator(database, 'localhost', 9000)
+//   connectStorageEmulator(storage, 'localhost', 9199)
+// }

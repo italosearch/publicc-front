@@ -7,7 +7,9 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithEmailAndPassword,
-  signInWithRedirect
+  createUserWithEmailAndPassword,
+  signInWithRedirect,
+  updateProfile
 } from "firebase/auth";
 import { auth } from "../services/server";
 import { AuthContext } from '../contexts/Auth';
@@ -27,9 +29,11 @@ export function CadastroForms() {
   }
 
   const [form, setForm] = useState({});
+  const [formRegister, setFormRegister] = useState({})
   const { email = "", password = "" } = form;
-  const inputFn = (value, property) =>
-    setForm((prevState) => ({
+  const { emailRegister = "", passwordRegister = "", nameRegister = "" } = formRegister;
+  const inputFn = (value, property, setState) =>
+  setState((prevState) => ({
       ...prevState,
       [property]: value,
     }));
@@ -102,6 +106,17 @@ export function CadastroForms() {
       })
   }
 
+  const handleCreateUser = () => {
+    createUserWithEmailAndPassword(auth, emailRegister, passwordRegister)
+    .then((user) => updateProfile(user.currentUser, {
+      displayName: nameRegister
+    }))
+    .catch((error) => {
+      // An error occurred
+      // ...
+    });
+  }
+
   return (
     <div className={styles.cadastroFormsContainer}>
       <div className={styles.cadastroFormsHeader}>
@@ -149,13 +164,13 @@ export function CadastroForms() {
               <input
                 type="text"
                 placeholder="Email"
-                onChange={(e) => inputFn(e.target.value, "email")}
+                onChange={(e) => inputFn(e.target.value, "email", setForm)}
                 value={email}
               />
               <input
                 type="text"
                 placeholder="Senha"
-                onChange={(e) => inputFn(e.target.value, "password")}
+                onChange={(e) => inputFn(e.target.value, "password", setForm)}
                 value={password}
               />
               <button type="submit" onClick={() => handleSubmit()}>Entrar</button>
@@ -191,9 +206,9 @@ export function CadastroForms() {
           <div className={styles.separator}>ou cadastre-se com seu email</div>
           <fieldset>
             <div className={styles.inputsNbuttons}>
-              <input type="text" placeholder="Nome e sobrenome" />
-              <input type="text" placeholder="E-mail" />
-              <input type="text" placeholder="Senha - Mínimo 8 dígitos" />
+              <input type="text" placeholder="Nome e sobrenome" onChange={(e) => inputFn(e.target.value, 'nameRegister', setFormRegister)} value={nameRegister} />
+              <input type="text" placeholder="E-mail" onChange={(e) => inputFn(e.target.value, 'emailRegister', setFormRegister)} value={emailRegister} />
+              <input type="text" placeholder="Senha - Mínimo 8 dígitos" onChange={(e) => inputFn(e.target.value, 'passwordRegister', setFormRegister)} value={passwordRegister} />
               <div className={styles.checkBoxes}>
                 <div>
                   <button></button> Estou de acordo com os <p>Termos de Uso</p>
@@ -204,7 +219,7 @@ export function CadastroForms() {
                   <p>Políticas de privacidade</p>
                 </div>
               </div>
-              <button>Criar uma conta agora</button>
+              <button type="submit" onClick={() => handleCreateUser()}>Criar uma conta agora</button>
             </div>
           </fieldset>
         </form>
