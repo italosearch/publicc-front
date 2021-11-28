@@ -6,7 +6,8 @@ import styles from "../styles/components/cadastroForms.module.css";
 import {
   GoogleAuthProvider,
   FacebookAuthProvider,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signInWithRedirect
 } from "firebase/auth";
 import { auth } from "../services/server";
 import { AuthContext } from '../contexts/Auth';
@@ -51,7 +52,7 @@ export function CadastroForms() {
 
 
   const handleGoogle = () => {
-    signInWithPopup(auth, googleProvider)
+    signInWithRedirect(auth, googleProvider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result)
@@ -75,7 +76,7 @@ export function CadastroForms() {
   }
 
   const handleFacebook = () => {
-    signInWithPopup(auth, facebookProvider)
+    signInWithRedirect(auth, facebookProvider)
       .then((result) => {
         // The signed-in user info.
         const user = result.user
