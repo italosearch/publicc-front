@@ -1,26 +1,24 @@
-import React, { useEffect } from 'react';
-import { CadastroForms } from '../components/cadastroForms';
-import styles from '../styles/pages/cadastro.module.css';
-import { auth } from '../services/server'
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useEffect } from 'react'
 
-const provider = new GoogleAuthProvider();
+import Router from 'next/router'
 
+import { AuthContext } from '../contexts/Auth';
+
+import CadastroTemplate from '../templates/Cadastro'
 
 function Cadastro() {
-  useEffect( () => {
-    signInWithPopup(auth, provider)
-  .then((result) => {
-    console.log(result)
-})
+  const { isAuthenticated } = AuthContext()
+  const realeasePage = isAuthenticated
 
-  }, []) 
-  
-  return (
-    <div className={styles.cadastroContainer}>
-      <CadastroForms />
-    </div>
-  );
+  useEffect(() => {
+    if (realeasePage) {
+      Router.push('/')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [realeasePage])
+
+  if (realeasePage) return <div>Carregando..</div>
+  return <CadastroTemplate />
 }
 
 export default Cadastro;

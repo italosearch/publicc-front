@@ -1,7 +1,9 @@
 import Head from 'next/head';
-import LandingPage from './landingPage';
+
+import { AuthContext } from '../contexts/Auth';
 
 export default function Home() {
+  const { isAuthenticated } = AuthContext()
   // const [count, setCounter] = useState(1);
 
   // useEffect(() => {
@@ -23,9 +25,6 @@ export default function Home() {
         <meta name="projeto-front" content="front" />
       </Head>
 
-      <main>
-        <LandingPage />
-      </main>
     </>
   );
 }

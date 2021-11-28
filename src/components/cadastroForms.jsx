@@ -6,14 +6,18 @@ import styles from "../styles/components/cadastroForms.module.css";
 import {
   GoogleAuthProvider,
   FacebookAuthProvider,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from "firebase/auth";
 import { auth } from "../services/server";
+import { AuthContext } from '../contexts/Auth';
 
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
 export function CadastroForms() {
+  const { isAuthenticated } = AuthContext()
+  const user = isAuthenticated ? auth.currentUser : null
+
   const [isLoginSelected, setIsLoginSelected] = useState(true);
   const [isSignUpSelected, setIsSignUpSelected] = useState(false);
   function selectButton() {
@@ -28,6 +32,7 @@ export function CadastroForms() {
       ...prevState,
       [property]: value,
     }));
+
   const handleSubmit = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -43,6 +48,58 @@ export function CadastroForms() {
         console.log({ errorCode, errorMessage });
       });
   };
+
+
+  const handleGoogle = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result)
+        const token = credential?.accessToken
+        // The signed-in user info.
+        const user = result.user
+
+        console.log('user', { token, user })
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        const email = error.email
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error)
+        // ...
+      })
+  }
+
+  const handleFacebook = () => {
+    signInWithPopup(auth, facebookProvider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user
+
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result)
+        const accessToken = credential?.accessToken
+
+        console.log('user', { accessToken, user })
+
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        const email = error.email
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error)
+
+        // ...
+      })
+  }
 
   return (
     <div className={styles.cadastroFormsContainer}>
@@ -66,7 +123,7 @@ export function CadastroForms() {
           className={styles.loginFormContent}
         >
           <div className={styles.loginWithContainer}>
-            <button>
+            <button onClick={() => handleFacebook()}>
               <Image
                 src={FacebookIcon}
                 alt="login_facebook"
@@ -75,7 +132,7 @@ export function CadastroForms() {
               />
               Entrar com Facebook
             </button>
-            <button>
+            <button onClick={() => handleGoogle()}>
               <Image
                 src={GoogleIcon}
                 alt="login_google"
@@ -100,7 +157,7 @@ export function CadastroForms() {
                 onChange={(e) => inputFn(e.target.value, "password")}
                 value={password}
               />
-              <button>Entrar</button>
+              <button type="submit" onClick={() => handleSubmit()}>Entrar</button>
             </div>
             <span>Esqueceu a senha?</span>
           </fieldset>
@@ -111,7 +168,7 @@ export function CadastroForms() {
           className={styles.signUpFormContent}
         >
           <div className={styles.loginWithContainer}>
-            <button>
+            <button onClick={() => handleFacebook()}>
               <Image
                 src={FacebookIcon}
                 alt="login_facebook"
@@ -120,7 +177,7 @@ export function CadastroForms() {
               />
               Cadastre-se pelo Facebook
             </button>
-            <button>
+            <button onClick={() => handleGoogle()}>
               <Image
                 src={GoogleIcon}
                 alt="login_google"
