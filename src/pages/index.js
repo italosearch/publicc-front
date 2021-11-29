@@ -1,9 +1,6 @@
 import Head from 'next/head';
 
-import { AuthContext } from '../contexts/Auth';
-
 export default function Home() {
-  const { isAuthenticated } = AuthContext()
   // const [count, setCounter] = useState(1);
 
   // useEffect(() => {

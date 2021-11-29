@@ -8,16 +8,15 @@ import CadastroTemplate from '../templates/Cadastro'
 
 function Cadastro() {
   const { isAuthenticated } = AuthContext()
-  const realeasePage = isAuthenticated
 
   useEffect(() => {
-    if (realeasePage) {
+    if (isAuthenticated) {
       Router.push('/')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [realeasePage])
+  }, [isAuthenticated])
 
-  if (realeasePage) return <div>Carregando..</div>
+  if (isAuthenticated) return <div>Carregando...</div>
   return <CadastroTemplate />
 }
 
